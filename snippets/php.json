@@ -1,0 +1,929 @@
+{
+	/*
+        // Place your snippets for PHP here. Each snippet is defined under a snippet name and has a prefix, body and
+        // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+        // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+        // same ids are connected.
+        // Example:
+        "Print to console": {
+            "prefix": "log",
+            "body": [
+                "console.log('$1');",
+                "$2"
+            ],
+            "description": "Log output to console"
+        }
+    */
+
+	"__LINE__": {
+		"prefix": "_l",
+		"body": ["__LINE__"],
+		"description": "The current line number of the file."
+	},
+
+	"__FILE__": {
+		"prefix": "_f",
+		"body": ["__FILE__"],
+		"description": "The full path and filename of the file with symlinks resolved. If used inside an include, the name of the included file is returned."
+	},
+	"__DIR__": {
+		"prefix": "_d",
+		"body": ["__DIR__"],
+		"description": "The directory of the file. If used inside an include, the directory of the included file is returned. This is equivalent to dirname(__FILE__). This directory name does not have a trailing slash unless it is the root directory."
+	},
+
+	"__FUNCTION__": {
+		"prefix": "_fun",
+		"body": ["__FUNCTION__"],
+		"description": "The function name, or {closure} for anonymous functions."
+	},
+
+	"__CLASS__": {
+		"prefix": "_cl",
+		"body": ["__CLASS__"],
+		"description": "The class name. The class name includes the namespace it was declared in (e.g. FooBar). When used in a trait method, __CLASS__ is the name of the class the trait is used in.nonymous functions."
+	},
+
+	"__TRAIT__": {
+		"prefix": "_t",
+		"body": ["__TRAIT__"],
+		"description": "The trait name. The trait name includes the namespace it was declared in (e.g. FooBar)."
+	},
+	"__METHOD__": {
+		"prefix": "_m",
+		"body": ["__METHOD__"],
+		"description": "The class method name."
+	},
+	"_n": {
+		"prefix": "_n",
+		"body": ["__NAMESPACE__"],
+		"description": "The name of the current namespace."
+	},
+	"_cn": {
+		"prefix": "_cn",
+		"body": ["ClassName::class"],
+		"description": "The fully qualified class name."
+	},
+
+	"p:dump": {
+		"prefix": "p:dump",
+		"body": ["dump(${0});"],
+		"description": "dump function of PrestaShop"
+	},
+
+	"p:vdump": {
+		"prefix": "p:vdump",
+		"body": ["var_dump(${0});"],
+		"description": "var_dump function for PHP"
+	},
+
+	"p:printr": {
+		"prefix": "p:printr",
+		"body": ["print_r(${0});"],
+		"description": "print_r function for PHP"
+	},
+
+	"p:assign": {
+		"prefix": "p:assign",
+		"body": [
+			"\\$this->context->smarty->assign(",
+			"\tarray(",
+			"\t\t'${1:variable_name1}' => \\$$2,$0",
+			"\t\t'${2:variable_name2}' => \\$$2,$0",
+			"\t)",
+			");"
+		],
+		"description": "$this->context->smarty->assign()"
+	},
+
+	"p:getval": {
+		"prefix": "p:getval",
+		"body": ["Tools::getValue('$0');"],
+		"description": "Get value from $_GET or $_POST Tools::getValue()"
+	},
+
+	"Generate token for module or adminController": {
+		"prefix": "p:token",
+		"body": ["Tools::getAdminTokenLite('${0:admin_controller_name}');"],
+		"description": "Generate token for module or adminController"
+	},
+
+	"Allows to display the text without HTML tags and slashes": {
+		"prefix": "p:clean",
+		"body": ["Tools::getDescriptionClean(\\$text);", ""],
+		"description": "Allows to display the text without HTML tags and slashes"
+	},
+
+	"Get user browser": {
+		"prefix": "p:userBrowser",
+		"body": ["Tools::getUserBrowser();", ""],
+		"description": "Get user browser"
+	},
+
+	"Get user platform": {
+		"prefix": "p:userPlatform",
+		"body": ["Tools::getUserPlatform();", ""],
+		"description": "Get user platform"
+	},
+
+	"Bool value": {
+		"prefix": "p:boolVal",
+		"body": ["Tools::boolVal(\\$value);", ""],
+		"description": "Bool Value"
+	},
+
+	"Identify the version of php": {
+		"prefix": "p:phpVer",
+		"body": ["Tools::checkPhpVersion();", ""],
+		"description": "Identify the version of php"
+	},
+
+	"Converts SomethingLikeThis to something-like-this": {
+		"prefix": "p:camelCaseToKebabCase",
+		"body": ["Tools::camelCaseToKebabCase(\\$text);", ""],
+		"description": "Converts SomethingLikeThis to something-like-this"
+	},
+
+	"Transform a CamelCase string to underscore_case string": {
+		"prefix": "p:toUnderscoreCase",
+		"body": ["Tools::toUnderscoreCase(\\$text);", ""],
+		"description": "Transform a CamelCase string to underscore_case string"
+	},
+
+	"Translates a string with underscores into camel case (e.g. first_name -> firstName)": {
+		"prefix": "p:toCamelCase",
+		"body": ["Tools::toCamelCase(\\$text);", ""],
+		"description": "Translates a string with underscores into camel case (e.g. first_name -> firstName)"
+	},
+
+	"Function simplexml_load_file()": {
+		"prefix": "p:simplexml_load_file",
+		"body": ["Tools::simplexml_load_file(\\$url);", ""],
+		"description": "Function simplexml_load_file()"
+	},
+
+	"Checks if a key exists either in $_POST or $_GET": {
+		"prefix": "p:getIsset",
+		"body": ["Tools::getIsset(\\$key);", ""],
+		"description": "Checks if a key exists either in $_POST or $_GET"
+	},
+
+	"Get all values from $_POST/$_GET": {
+		"prefix": "p:getAllValues",
+		"body": ["Tools::getAllValues();", ""],
+		"description": "Get all values from $_POST/$_GET"
+	},
+
+	"Redirect user to another page (using header Location)": {
+		"prefix": "p:redirectAdmin",
+		"body": ["Tools::redirectAdmin(\\$url);", ""],
+		"description": "Redirect user to another page (using header Location)"
+	},
+
+	"Redirect URLs already containing PS_BASE_URI": {
+		"prefix": "p:redirectLink",
+		"body": ["Tools::redirectLink(\\$url);", ""],
+		"description": "Redirect URLs already containing PS_BASE_URI"
+	},
+
+	"Redirect user to another page": {
+		"prefix": "p:redirect",
+		"body": ["Tools::redirect(\\$url);", ""],
+		"description": "Redirect user to another page"
+	},
+
+	"p:class": {
+		"prefix": "p:class",
+		"body": [
+			"if (!defined('_PS_VERSION_')) {",
+			"\texit;",
+			"}",
+			"",
+			"class ${1:${TM_FILENAME_BASE}} extends ObjectModel",
+			"{",
+			"",
+			"\tpublic \\$${2:id};",
+			"\tpublic \\$${3:title};",
+			"\tpublic \\$${4:content};",
+			"\tpublic \\$${5:date_add};",
+			"\tpublic \\$${6:rate};",
+			"\tpublic \\$${7:more_info};",
+			"\tpublic \\$${8:active};",
+			"",
+			"\tpublic static \\$definition = array(",
+			"\t\t'table'     => 'name_of_table_without_prefix',",
+			"\t\t'primary'   => 'Primary key',",
+			"\t\t'multilang' => false,",
+			"\t\t'multilang_shop' => false,",
+			"\t\t'fields'    => array(",
+			"\t\t\t'${2:'id'}' => array('type' => self::TYPE_INT, 'validate' => 'isInt'),",
+			"\t\t\t'${3:'title'}' => array('type' => self::TYPE_STRING, 'validate' => 'isString'),",
+			"\t\t\t'${4:'content'}' => array('type' => self::TYPE_HTML, 'validate' => 'isAnything'),",
+			"\t\t\t'${5:'date_add'}' => array('type' => self::TYPE_DATE, 'validate' => 'isDate'),",
+			"\t\t\t'${6:'rate'}' => array('type' => self::TYPE_FLOAT, 'validate' => 'isFloat'),",
+			"\t\t\t'${7:'more_info'}' => array('type' => self::TYPE_NOTHING, 'validate' => 'isAnything'),",
+			"\t\t\t'${8:'active'}' => array('type' => self::TYPE_BOOL, 'validate' => 'isBool'),",
+			"\t\t),",
+			"\t);",
+			"}"
+		],
+		"description": "Create a Prestashop Object Model Sample"
+	},
+
+	"p:module": {
+		"prefix": "p:module",
+		"body": [
+			"if (!defined('_PS_VERSION_')) {",
+			"\texit;",
+			"}",
+			"",
+			"// require_once(_PS_ROOT_DIR_.'/modules/${TM_FILENAME_BASE}/classes/NameClass.php');",
+			"",
+			"",
+			"class ${1:MDNomDuModule} extends Module",
+			"{",
+			"\tconst AVAILABLE_HOOKS = [",
+			"\t\t'header',",
+			"\t\t'footer',",
+			"\t\t'${5:nomDuCustomHook}'",
+			"\t];",
+			"",
+			"\tpublic function __construct()",
+			"\t{",
+			"\t\t\\$this->name = '${2:${TM_FILENAME_BASE/(.*)/${1:/downcase}/}<<}';",
+			"\t\t\\$this->tab = 'front_office_features';",
+			"\t\t\\$this->version = '1.0.0';",
+			"\t\t\\$this->author = 'Roman Matviy';",
+			"\t\t\\$this->need_instance = 0;",
+			"\t\t\\$this->bootstrap = true;",
+			"",
+			"\t\tparent::__construct();",
+			"",
+			"\t\t\\$this->displayName = \\$this->l('${3: Name of the module visible in the BO}');",
+			"\t\t\\$this->description = \\$this->l('${4: Description of the module visible in the BO}');",
+			"\t}",
+			"",
+			"\tpublic function install()",
+			"\t{",
+			"\t\tif (parent::install() && \\$this->registerHook(self::AVAILABLE_HOOKS)) {",
+			"\t\t\treturn true;",
+			"\t\t}",
+			"",
+			"\t\treturn false;",
+			"",
+			"\t}",
+			"",
+			"\tpublic function uninstall()",
+			"\t{",
+			"\t\treturn parent::uninstall();",
+			"\t}",
+			"",
+			"\tpublic function hookHeader(\\$params)",
+			"\t{",
+			"\t\t// Added CSS file for the front",
+			"\t\t\\$this->context->controller->addCSS(\\$this->_path.'views/css/front.css');",
+			"\t}",
+			"",
+			"\tpublic function hookFooter(\\$params)",
+			"\t{",
+			"\t\t// Added JS file for the front",
+			"\t\t\\$this->context->controller->addJS(\\$this->_path.'views/js/front.js');",
+			"\t}",
+			"",
+			"\tpublic function hook${5/(.*)/${1:/capitalize}/}(\\$params)",
+			"\t{",
+			"\t\t// Added JS file for the front",
+			"\t\t\\$this->context->controller->addJS(\\$this->_path.'views/js/front.js');",
+			"\t}",
+			"}"
+		],
+		"description": "Show a Prestashop module sample"
+	},
+
+	"Generate a Mail::send": {
+		"prefix": "p:mail_send",
+		"body": [
+			"Mail::Send(",
+			"    (int)${1:\\$this->context->language->id}, // language id",
+			"    '${2:template}', // email template file to be use",
+			"    '${3:Subject}', // email subject",
+			"    array(",
+			"        '{message}' => 'Hello world' // email content",
+			"    ),",
+			"    ${4:Configuration::get('PS_SHOP_EMAIL')}, // receiver email address",
+			"    NULL, //receiver name",
+			"    NULL, //from email address",
+			"    NULL, //from name",
+			"    NULL, //file attachment",
+			"    NULL, //mode smtp",
+			"    _PS_MODULE_DIR_ . '${5:module_name}/mails' //custom template path",
+			");"
+		],
+		"description": "Generate a Mail::send"
+	},
+
+	"_c": {
+		"prefix": "_c",
+		"body": [
+			"public function __construct($${1:parameters})",
+			"{",
+			"\t$0",
+			"}"
+		],
+		"description": "Constructor"
+	},
+	"eco": {
+		"prefix": "eco",
+		"body": ["echo \"$0\";"],
+		"description": "'echo' statement"
+	},
+	"fore": {
+		"prefix": "fore",
+		"body": ["foreach ($1 as $${2:item}) {", "\t$0", "}"],
+		"description": "foreach(iterable_expr as $value) {...}"
+	},
+	"forek": {
+		"prefix": "forek",
+		"body": ["foreach ($1 as $${2:key} => $${3:index}) {", "\t$0", "}"],
+		"description": "foreach(iterable_expr as $key => $value) {...}"
+	},
+	"inc": {
+		"prefix": "inc",
+		"body": ["include \"$0\";"],
+		"description": "'include' statement"
+	},
+	"inco": {
+		"prefix": "inco",
+		"body": ["include_once \"$0\";"],
+		"description": "'include_once' statement"
+	},
+	"prif": {
+		"prefix": "prif",
+		"body": ["private function $1($2)", "{", "\t$0", "}"],
+		"description": "private function"
+	},
+	"prisf": {
+		"prefix": "prisf",
+		"body": ["private static function $1($2)", "{", "\t$0", "}"],
+		"description": "private static function"
+	},
+	"prof": {
+		"prefix": "prof",
+		"body": ["protected function $1($2)", "{", "\t$0", "}"],
+		"description": "protected function"
+	},
+	"prosf": {
+		"prefix": "prosf",
+		"body": ["protected static function $1($2)", "{", "\t$0", "}"],
+		"description": "protected static function"
+	},
+	"pubf": {
+		"prefix": "pubf",
+		"body": ["public function $1($2)", "{", "\t$0", "}"],
+		"description": "public function"
+	},
+	"pubsf": {
+		"prefix": "pubsf",
+		"body": ["public static function $1($2)", "{", "\t$0", "}"],
+		"description": "public static function"
+	},
+	"rqr": {
+		"prefix": "rqr",
+		"body": ["require \"$0\";"],
+		"description": "'require' statement"
+	},
+	"rqro": {
+		"prefix": "rqro",
+		"body": ["require_once \"$0\";"],
+		"description": "'require_once' statement"
+	},
+	"thr": {
+		"prefix": "thr",
+		"body": [
+			"throw new ${1:\\Exception}(\"${2:Error Processing Request}\");"
+		],
+		"description": "throw new"
+	},
+
+	//! php snippets
+	"PHP: COOKIE['...']": {
+		"prefix": "$_",
+		"body": ["$$_COOKIE['$1']"],
+		"description": "PHP Cookie"
+	},
+	"PHP: ENV['...']": {
+		"prefix": "$_",
+		"body": ["$$_ENV['$1']"],
+		"description": "PHP env"
+	},
+	"PHP: FILES['...']": {
+		"prefix": "$_",
+		"body": ["$$_FILES['$1']"],
+		"description": "PHP Files"
+	},
+	"PHP: GET['...']": {
+		"prefix": "$_",
+		"body": ["$$_GET['$1']"],
+		"description": "PHP Get"
+	},
+	"PHP: POST['...']": {
+		"prefix": "$_",
+		"body": ["$$_POST['$1']"],
+		"description": "PHP Post"
+	},
+	"PHP: REQUEST['...']": {
+		"prefix": "$_",
+		"body": ["$$_REQUEST['$1']"],
+		"description": "PHP Request"
+	},
+	"PHP: SERVER['...']": {
+		"prefix": "$_",
+		"body": ["$$_SERVER['$1']"],
+		"description": "PHP Server"
+	},
+	"PHP: SESSION['...']": {
+		"prefix": "$_",
+		"body": ["$$_SESSION['$1']"],
+		"description": "PHP Session"
+	},
+	"PHP: return;": {
+		"prefix": "r",
+		"body": ["return$1;"],
+		"desription": "PHP blank return statement"
+	},
+	"PHP: Short echo tag ": {
+		"prefix": "?=",
+		"body": ["<?= $1 ?>"],
+		"description": "PHP short echo tag"
+	},
+	"PHP: Class declaration": {
+		"prefix": "c",
+		"body": ["class $1 {", "     $2", "}"],
+		"description": "PHP class declaration"
+	},
+	"PHP: Class w/ constructor": {
+		"prefix": "cc",
+		"body": [
+			"class $1 {",
+			"     public function __construct()",
+			"     {",
+			"         $2",
+			"     }",
+			"}"
+		],
+		"description": "PHP class w/ constructor"
+	},
+	"PHP: trait ... {": {
+		"prefix": "trt",
+		"body": [
+			"namespace $1;",
+			"",
+			"use $2;",
+			"",
+			"trait $3Trait {",
+			"    $4",
+			"}"
+		]
+	},
+	"Laravel: dd(...)": {
+		"prefix": "dd",
+		"body": ["dd($1);"],
+		"description": "Laravel die & dump"
+	},
+	"PHP Public Function: public function ...(...)": {
+		"prefix": "pfunc",
+		"body": ["public function $1($2)", "{", "\t$3", "}"]
+	},
+
+	//! php ajax
+	"Ajax Call Your PHP Method": {
+		"prefix": "p:ajaxMethod",
+		"body": [
+			"public function displayAjaxDoSomeAction()",
+			"{",
+			"    header('Content-Type: application/json; charset=utf-8');",
+			"    \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 1.']));",
+			"}",
+			"",
+			"public function processDoSomeAction()",
+			"{",
+			"    header('Content-Type: application/json');",
+			"    \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 2.']));",
+			"}",
+			"",
+			"public function ajaxProcessDoSomeAction()",
+			"{",
+			"    header('Content-Type: application/json');",
+			"    \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 3.']));",
+			"}",
+			"public function run()",
+			"{",
+			"    if (mb_strtolower(Tools::getValue('action')) == mb_strtolower('doSomeAction')) {",
+			"        FrontController::init();",
+			"        \\$this->displayAjaxDoSomeAction();",
+			"    }",
+			"",
+			"    return parent::run();",
+			"}",
+
+			"//In Prestashop, we can follow this processor same in our front controller as well.",
+
+			"//Here, only different is displayAjax and ajaxProcess.",
+
+			"//In Admin Controller – we need to prefix “ajaxProcesss” with our action ",
+			"//function which we have passed in our ajax call , while getting ajax call.",
+			"//In front controller – we need to prefix “displayAjax” with our action function which we have passed in our ajax call, while getting ajax call."
+		],
+		"description": "Ajax Call Your Method"
+	},
+
+	"Ajax Call Your Admin Controller Code": {
+		"prefix": "p:ajaxAdminController",
+		"body": [
+			"/**",
+			"* 2022 aPartner.Top AND programist.top",
+			"*",
+			"* NOTICE OF LICENSE",
+			"*",
+			"* All right is reserved,",
+			"* Please go through this link for complete license : https://apartner.top/license.html",
+			"*",
+			"* DISCLAIMER",
+			"*",
+			"* Do not edit or add to this file if you wish to upgrade this module to newer",
+			"* versions in the future. If you wish to customize this module for your",
+			"* needs please refer to https://apartner.top/customisation-guidelines/ for more information.",
+			"*",
+			"*  @author    Roman Matviy",
+			"*  @copyright 2022 aPartner.Top AND programist.top",
+			"*  @license   https://apartner.top/license.html",
+			"*/",
+			"",
+			"class YourAdminControllerController extends ModuleAdminController",
+			"{",
+			"    public function __construct()",
+			"    {",
+			"        \\$this->identifier = 'id';",
+			"        parent::__construct();",
+			"        \\$this->bootstrap = true;",
+			"        // your own code",
+			"    }",
+			"",
+			"    // your own functions",
+			"    // your own functions",
+			"    // your own functions",
+			"    // your own functions",
+			"",
+			"    //This function will get ajax call where pass two variables and a method name doSomeAction",
+			"    public function displayAjaxDoSomeAction()",
+			"    {",
+			"        header('Content-Type: application/json; charset=utf-8');",
+			"",
+			"        \\$${2:var1} = Tools::getValue('${3:variable_1}');",
+			"        \\$${4:var2} = Tools::getValue('${5:variable_2}');",
+			"",
+			"        // your action code ....",
+			"",
+			"        \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 1.']));",
+			"    }",
+			"",
+			"    public function processDoSomeAction()",
+			"    {",
+			"        header('Content-Type: application/json');",
+			"",
+			"        // your action code ....",
+			"",
+			"        \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 2.']));",
+			"    }",
+			"",
+			"    public function ajaxProcessDoSomeAction()",
+			"    {",
+			"        header('Content-Type: application/json; charset=utf-8');",
+			"",
+			"        // your action code ....",
+			"",
+			"        \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 3.']));",
+			"    }",
+			"",
+			"    public function run()",
+			"    {",
+			"        if (mb_strtolower(Tools::getValue('action')) == mb_strtolower('doSomeAction')) {",
+			"            FrontController::init();",
+			"            \\$this->displayAjaxDoSomeAction();",
+			"        }",
+			"",
+			"        return parent::run();",
+			"    }",
+			"}",
+
+			"//In Prestashop, we can follow this processor same in our front controller as well.",
+
+			"//Here, only different is displayAjax and ajaxProcess.",
+
+			"//In Admin Controller – we need to prefix “ajaxProcesss” with our action ",
+			"//function which we have passed in our ajax call , while getting ajax call.",
+			"//In front controller – we need to prefix “displayAjax” with our action function which we have passed in our ajax call, while getting ajax call."
+		],
+		"description": "Ajax Call Your Admin Controller Code"
+	},
+
+	"Ajax Call Your Front Controller Code": {
+		"prefix": "p:ajaxFrontController",
+		"body": [
+			"/**",
+			"* 2022 aPartner.Top AND programist.top",
+			"*",
+			"* NOTICE OF LICENSE",
+			"*",
+			"* All right is reserved,",
+			"* Please go through this link for complete license : https://apartner.top/license.html",
+			"*",
+			"* DISCLAIMER",
+			"*",
+			"* Do not edit or add to this file if you wish to upgrade this module to newer",
+			"* versions in the future. If you wish to customize this module for your",
+			"* needs please refer to https://apartner.top/customisation-guidelines/ for more information.",
+			"*",
+			"*  @author    Roman Matviy",
+			"*  @copyright 2022 aPartner.Top AND programist.top",
+			"*  @license   https://apartner.top/license.html",
+			"*/",
+			"",
+			"class ModuleNameYourFrontControllerFrontController extends ModuleFrontController",
+			"{",
+			"    public function __construct()",
+			"    {",
+			"\t\tparent::__construct();",
+			"\t\t// your own code",
+			"    }",
+			"",
+			"    public function initContent()",
+			"    {",
+			"\t\tparent::initContent();",
+			"\t\t// your own code",
+			"    }",
+			"",
+			"    // your own functions",
+			"    // your own functions",
+			"    // your own functions",
+			"    // your own functions",
+			"",
+			"    //This function will get ajax call where pass two variables and a method name doSomeAction",
+			"    public function displayAjaxDoSomeAction()",
+			"    {",
+			"        header('Content-Type: application/json; charset=utf-8');",
+			"",
+			"        \\$${2:var1} = Tools::getValue('${3:variable_1}');",
+			"        \\$${4:var2} = Tools::getValue('${5:variable_2}');",
+			"",
+			"        // your action code ....",
+			"",
+			"        \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 1.']));",
+			"    }",
+			"",
+			"    public function processDoSomeAction()",
+			"    {",
+			"        header('Content-Type: application/json');",
+			"",
+			"        // your action code ....",
+			"",
+			"        \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 2.']));",
+			"    }",
+			"",
+			"    public function ajaxProcessDoSomeAction()",
+			"    {",
+			"        header('Content-Type: application/json; charset=utf-8');",
+			"",
+			"        // your action code ....",
+			"",
+			"        \\$this->ajaxDie(Tools::jsonEncode(['error' => 'This is a test 3.']));",
+			"    }",
+			"",
+			"    public function run()",
+			"    {",
+			"        if (mb_strtolower(Tools::getValue('action')) == mb_strtolower('doSomeAction')) {",
+			"            FrontController::init();",
+			"            \\$this->displayAjaxDoSomeAction();",
+			"        }",
+			"",
+			"        return parent::run();",
+			"    }",
+			"}",
+
+			"//In Prestashop, we can follow this processor same in our front controller as well.",
+
+			"//Here, only different is displayAjax and ajaxProcess.",
+
+			"//In Admin Controller – we need to prefix “ajaxProcesss” with our action ",
+			"//function which we have passed in our ajax call , while getting ajax call.",
+			"//In front controller – we need to prefix “displayAjax” with our action function which we have passed in our ajax call, while getting ajax call."
+		],
+		"description": "Ajax Call Your Front Controller Code"
+	},
+
+	//! SQL PHP
+	"SQL DB": {
+		"prefix": "p:sqlDb",
+		"body": ["\\$db = Db::getInstance();"],
+		"description": "SQL DB"
+	},
+
+	"SQL DB 1": {
+		"prefix": "p:sqlDb1",
+		"body": ["\\$db = Db::getInstance(_PS_USE_SQL_SLAVE_);"],
+		"description": "SQL DB1"
+	},
+
+	"p:prefix": {
+		"prefix": "p:prefix",
+		"body": ["_DB_PREFIX_"],
+		"description": "Get Data base prefix _DB_PREFIX_"
+	},
+
+	"p:prefix1": {
+		"prefix": "p:prefix1",
+		"body": ["Db::getInstance->getPrefix();"],
+		"description": "Get Data base prefix Db::getInstance->getPrefix();"
+	},
+
+	"p:sqlQuery": {
+		"prefix": "p:sqlQuery",
+		"body": [
+			"\\$sql = new DbQuery();",
+			"\\$sql->select('*');",
+			"\\$sql->from('cms', 'c');",
+			"\\$sql->innerJoin('cms_lang', 'l', 'c.id_cms = l.id_cms AND l.id_lang = '.(int)\\$id_lang);",
+			"\\$sql->where('c.active = 1');",
+			"\\$sql->orderBy('position');",
+			"return Db::getInstance()->executeS(\\$sql);"
+		],
+		"description": "Prestashop DB Query"
+	},
+
+	"p:sqlExecute": {
+		"prefix": "p:sqlExecute",
+		"body": ["Db::getInstance()->execute(\\$sql$0);"],
+		"description": "Prestashop DB execute function"
+	},
+
+	"p:sqlExecuteS": {
+		"prefix": "p:sqlExecuteS",
+		"body": ["Db::getInstance()->executeS(\\$sql$0);"],
+		"description": "Prestashop DB executeS function"
+	},
+
+	"p:sqlRow": {
+		"prefix": "p:sqlRow",
+		"body": ["Db::getInstance()->getRow(\\$sql$0);"],
+		"description": "Prestashop DB getRow function"
+	},
+
+	"p:sqlVal": {
+		"prefix": "p:sqlVal",
+		"body": ["Db::getInstance()->getValue(\\$sql$0);"],
+		"description": "Prestashop DB getValue function"
+	},
+
+	"SQL prestashop delete DELETE FROM `prefix_target_table` WHERE myField = 15 LIMIT 1": {
+		"prefix": "p:sqlDelete",
+		"body": [
+			"Db::getInstance()->delete('target_table', 'myField = 15', 1); //15 = id //1 = LIMIT"
+		],
+		"description": "SQL prestashop delete DELETE FROM `prefix_target_table` WHERE myField = 15 LIMIT 1"
+	},
+
+	"SQL delete": {
+		"prefix": "p:sqlDelete1",
+		"body": [
+			"\\$sql = 'DELETE FROM '._DB_PREFIX_.'table_name WHERE condition';",
+			"echo \\$sql;",
+			"Db::getInstance()->execute(\\$sql);"
+		],
+		"description": "SQL delete"
+	},
+
+	"SQL prestashop insert into": {
+		"prefix": "p:sqlInsert",
+		"body": [
+			"",
+			"\\$target = Tools::getValue('id');",
+			"\\$name = Tools::getValue('name');",
+			"Db::getInstance()->insert('target_table', array(",
+			"    'id_target' => (int)\\$target,",
+			"    'name'      => pSQL(\\$name),",
+			"));"
+		],
+		"description": "SQL prestashop insert into"
+	},
+
+	"SQL insert into 1": {
+		"prefix": "p:sqlInsert1",
+		"body": [
+			"\\$sql ='INSERT INTO '._DB_PREFIX_.'table_name (column1, column2, column3)",
+			"VALUES (value1, value2, value3)';",
+			"echo \\$sql;",
+			"Db::getInstance()->execute(\\$sql);"
+		],
+		"description": "SQL insert into 1"
+	},
+
+	"SQL insert into 2": {
+		"prefix": "p:sqlInsert2",
+		"body": [
+			"\\$sql ='INSERT INTO '._DB_PREFIX_.'table_name",
+			"VALUES (value1, value2, value3)';",
+			"echo \\$sql;",
+			"Db::getInstance()->execute(\\$sql);"
+		],
+		"description": "SQL insert into 2"
+	},
+
+	"SQL update": {
+		"prefix": "p:sqlUpdate",
+		"body": [
+			"\\$sql ='UPDATE '._DB_PREFIX_.'table_name",
+			"SET column1 = value1, column2 = value2, column3 = value3",
+			"WHERE condition;';",
+			"echo \\$sql;",
+			"Db::getInstance()->execute(\\$sql);"
+		],
+		"description": "SQL update"
+	},
+
+	"SQL returns the ID created during the latest INSERT query": {
+		"prefix": "p:sqlGetLastId",
+		"body": ["Db::getInstance()->Insert_ID();"],
+		"description": "SQL returns the ID created during the latest INSERT query"
+	},
+
+	"SQL returns the number of lines impacted by the latest UPDATE or DELETE query": {
+		"prefix": "p:sqlAffectedRows",
+		"body": ["Db::getInstance()->Affected_Rows();"],
+		"description": "SQL returns the number of lines impacted by the latest UPDATE or DELETE query"
+	},
+
+	"SQL returns the latest error message, if the query has failed": {
+		"prefix": "p:sqlGetMsgError",
+		"body": ["Db::getInstance()->getMsgError();"],
+		"description": "SQL returns the latest error message, if the query has failed"
+	},
+
+	"SQL returns the latest error number, if the query has failed": {
+		"prefix": "p:sqlGetNumberError",
+		"body": ["Db::getInstance()->getNumberError();"],
+		"description": "SQL returns the latest error number, if the query has failed"
+	},
+
+	"SQL escape. Security Note that none of the above methods escape the query itself. You will have to do that using either pSQL() or bqSQL().  pSQL() is an alias for Db::getInstance()->escape($string, $htmlOK);It accepts a string that will be sanitized by the function. If your string contains HTML-code, be sure to pass the argument $htmlOK = true as well.  bqSQL() can also be used. Note that besides escaping the ` character, it also calls pSQL() afterwards, but without the option to sanitize HTML.": {
+		"prefix": "p:sqlEscape",
+		"body": [
+			"",
+			"/**",
+			" * Sanitize data which will be injected into SQL query",
+			" *",
+			" * @param string $string SQL data which will be injected into SQL query",
+			" * @param bool $htmlOK Does data contain HTML code ? (optional)",
+			" * @return string Sanitized data",
+			" */",
+			"Db::getInstance()->escape(\\$${2:string}, \\$${3:htmlOK});",
+			""
+		],
+		"description": "SQL escape. Security Note that none of the above methods escape the query itself. You will have to do that using either pSQL() or bqSQL().  pSQL() is an alias for Db::getInstance()->escape($string, $htmlOK);It accepts a string that will be sanitized by the function. If your string contains HTML-code, be sure to pass the argument $htmlOK = true as well.  bqSQL() can also be used. Note that besides escaping the ` character, it also calls pSQL() afterwards, but without the option to sanitize HTML."
+	},
+	"SQL Get the number of rows in a result. This method caches and returns the number of rows from the last result set.  Be careful, if your request has a limit, the method numRows() is limited too. If you need to retrieve the number of rows without limits, you need to use SELECT COUNT(*).": {
+		"prefix": "p:sqlNumRows",
+		"body": ["Db::getInstance()->numRows();"],
+		"description": "SQL Get the number of rows in a result. This method caches and returns the number of rows from the last result set.  Be careful, if your request has a limit, the method numRows() is limited too. If you need to retrieve the number of rows without limits, you need to use SELECT COUNT(*)."
+	},
+
+	//! SQL PHP Configuration
+	"p:configuration::set": {
+		"prefix": "p:configuration::set",
+		"body": ["Configuration::set('${1:key}', '${2:value}');"],
+		"description": "Store configuration data. This method returns true if the operation is successful, false otherwise. Configuration::set(string $key, mixed $value, ShopConstraint $shopConstraint = null);"
+	},
+
+	"p:configuration::has": {
+		"prefix": "p:configuration::has",
+		"body": ["Configuration::has('${1:key}');"],
+		"description": "Check if a configuration data set exists. Configuration::has(string $key, ShopConstraint $shopConstraint = null);"
+	},
+
+	"p:configuration::updateValue": {
+		"prefix": "p:configuration::updateValue",
+		"body": ["Configuration::updateValue('${1:key}','${2:value}');"],
+		"description": "Update configuration data. Configuration::updateValue(string $key, mixed $value);"
+	},
+
+	"p:configuration::get": {
+		"prefix": "p:configuration::get",
+		"body": ["Configuration::get('${1:key}');"],
+		"description": "Retrieve configuration data. Configuration::get(string $key, mixed $default = null);"
+	},
+
+	"p:configuration::remove": {
+		"prefix": "p:configuration::remove",
+		"body": ["Configuration::remove('${1:key}');"],
+		"description": "Delete configuration. This method returns nothing, and throws an Exception on error. Configuration::remove(string $key);"
+	}
+}

@@ -1,0 +1,91 @@
+{
+	"name": "all-in-one-snippets",
+	"displayName": "All IN ONE SNIPPETS (PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery)",
+	"description": "All IN ONE SNIPPETS (PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery)",
+	"author": {
+		"name": "Roman Matviy"
+	},
+	"icon": "images/aPartner.Top.jpg",
+	"galleryBanner": {
+		"color": "#2c2c32",
+		"theme": "dark"
+	},
+	"homepage": "https://apartner.top",
+	"qna": "marketplace",
+	"publisher": "apartner-top",
+	"version": "0.0.4",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Keymaps",
+		"Azure",
+		"Snippets",
+		"Other"
+	],
+	"keywords": [
+		"templates",
+		"css/sass/scss/less",
+		"short code",
+		"apartner",
+		"programist",
+		"apartner.top",
+		"programist.top",
+		"php",
+		"css",
+		"scss",
+		"sass",
+		"less",
+		"smarty",
+		"twig",
+		"snippet",
+		"snippets",
+		"js",
+		"javascript",
+		"java script",
+		"jquery",
+		"azure",
+		"azure snippets",
+		"azure-snippets",
+		"PHPStorm",
+		"Live Templates"
+	],
+	"contributes": {
+		"keybindings": [
+			{
+				"key": "ctrl+.",
+				"command": "workbench.action.showCommands"
+			}
+		],
+		"snippets": [
+			{
+				"language": "php",
+				"path": "./snippets/php.json"
+			},
+			{
+				"language": "smarty",
+				"path": "./snippets/smarty.json"
+			},
+			{
+				"language": "css",
+				"path": "./snippets/css.json"
+			},
+			{
+				"language": "scss",
+				"path": "./snippets/css.json"
+			},
+			{
+				"language": "sass",
+				"path": "./snippets/css.json"
+			},
+			{
+				"language": "less",
+				"path": "./snippets/css.json"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/js.json"
+			}
+		]
+	}
+}
