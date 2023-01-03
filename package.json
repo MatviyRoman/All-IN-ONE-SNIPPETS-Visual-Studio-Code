@@ -13,7 +13,7 @@
 	"homepage": "https://apartner.top",
 	"qna": "marketplace",
 	"publisher": "apartner-top",
-	"version": "0.0.5",
+	"version": "0.0.7",
 	"engines": {
 		"vscode": "^1.0.0"
 	},
