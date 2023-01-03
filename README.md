@@ -1,5 +1,5 @@
-<a href="https://war.ukraine.ua"><img style="height: auto; max-width: 1920px; width: 100%;" src="images/russia-invaded-Ukraine.png" alt="russia invaded Ukraine"></a><br>
-<a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi"><img style="height: auto; max-width: 1920px; width: 100%;" src="images/support-Ukraine.png" alt="support Ukraine"></a>
+<a href="https://war.ukraine.ua"><img style="height: auto; max-width: 1920px; width: 100%;" src="https://raw.githubusercontent.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code/main/images/russia-invaded-Ukraine.png" alt="russia invaded Ukraine"></a><br>
+<a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi"><img style="height: auto; max-width: 1920px; width: 100%;" src="https://raw.githubusercontent.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code/main/images/support-Ukraine.png" alt="support Ukraine"></a>
 
 # All IN ONE SNIPPETS (PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery) README
 
@@ -19,7 +19,7 @@ jQuery Code Snippets for JavaScript code.
 
 Just type the letters 'jq' to get a list of all available jQuery Code Snippets.
 
-![Image of Snippets](images/jquery_snippets.png)
+![Image of Snippets](https://raw.githubusercontent.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code/main/images/jquery_snippets.png)
 
 | Trigger                  | Description                                                                                                                                                                                                                                                                                               |
 | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
