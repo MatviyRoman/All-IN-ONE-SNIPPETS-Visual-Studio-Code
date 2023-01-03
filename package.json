@@ -1,11 +1,11 @@
 {
 	"name": "all-in-one-snippets",
-	"displayName": "All IN ONE SNIPPETS (PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery)",
+	"displayName": "SNIPPETS ( PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery )",
 	"description": "All IN ONE SNIPPETS (PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery)",
 	"author": {
 		"name": "Roman Matviy"
 	},
-	"icon": "https://raw.githubusercontent.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code/main/images/aPartner.Top.jpg",
+	"icon": "images/snippets_supper.jpg",
 	"galleryBanner": {
 		"color": "#2c2c32",
 		"theme": "dark"
@@ -16,6 +16,10 @@
 	"version": "0.0.5",
 	"engines": {
 		"vscode": "^1.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code.git"
 	},
 	"categories": [
 		"Snippets",
@@ -33,6 +37,7 @@
 		"apartner.top",
 		"programist.top",
 		"php",
+		"SQL",
 		"css",
 		"scss",
 		"sass",
@@ -62,6 +67,10 @@
 			{
 				"language": "javascript",
 				"path": "./snippets/js.json"
+			},
+			{
+				"language": "sql",
+				"path": "./snippets/sql.json"
 			},
 			{
 				"language": "php",
