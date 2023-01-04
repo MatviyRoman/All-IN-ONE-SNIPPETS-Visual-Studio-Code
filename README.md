@@ -11,9 +11,7 @@ All in one snippets to help you be more productive when developing in PHP
 Support `tab` to previous/next slug.
 
 <details>
-<summary>Snippets jQuery</summary>
-
-### jQuery
+<summary><strong>Snippets jQuery</strong></summary>
 
 jQuery Code Snippets for JavaScript code.
 
@@ -195,8 +193,7 @@ Just type the letters 'jq' to get a list of all available jQuery Code Snippets.
 </details>
 
 <details>
-<summary>Snippets SQL</summary>
-# SQL Snippets
+<summary><strong>Snippets SQL</strong></summary>
 
 ![sample](images/sql_snippets.gif)
 
@@ -636,20 +633,6 @@ This extension contributes the following settings:
 -  `myExtension.enable`: enable/disable this extension
 -  `myExtension.thing`: set to `blah` to do something -->
 
-<!-- ## Known Issues
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
-
-<!-- ## Release Notes
-Users appreciate release notes as you update your extension.
-### 0.0.1
-Added snippets php, css, and smarty.
----
-### 0.0.2
-Added snippets smarty, html.
----
-
--->
-
 <!-- ## Working with Markdown
 
 **Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
@@ -662,11 +645,7 @@ Added snippets smarty, html.
 
 [Github](https://github.com/DonJayamanne/jquerysnippets)
 
-All snippets have been taken from the [Visual Studio 2015 jQuery Code Snippets Extension](https://github.com/kspearrin/Visual-Studio-jQuery-Code-Snippets). Credit given where due.
-
-## License
-
-[MIT](https://raw.githubusercontent.com/DonJayamanne/jquerysnippets/master/LICENSE) -->
+All snippets have been taken from the [Visual Studio 2015 jQuery Code Snippets Extension](https://github.com/kspearrin/Visual-Studio-jQuery-Code-Snippets). Credit given where due.-->
 
 ## Extension Dependencies
 
@@ -675,8 +654,13 @@ All IN ONE SNIPPETS (PHP, SQL, HTML, CSS, SCSS, SASS, JS, jQuery)
 Author : [Roman Matviy](https://roman.matviy.pp.ua)
 <br>
 Site : [https://matviy.pp.ua](https://matviy.pp.ua)
-<br>
-Source : [https://marketplace.visualstudio.com/items?itemName=apartner-top.prestashop-snippets](https://marketplace.visualstudio.com/items?itemName=apartner-top.prestashop-snippets)
+
+# Source
+[GitHub](https://github.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code)
+
+
+# License
+[MIT](https://raw.githubusercontent.com/MatviyRoman/All-IN-ONE-SNIPPETS-Visual-Studio-Code/main/LICENSE)
 
 # Donate
 
